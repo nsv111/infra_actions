@@ -31,7 +31,6 @@ jobs:
         python -m flake8
         cd infra_project/ 
         python manage.py test
-
 build_and_push_to_docker_hub:
   name: Push Docker image to Docker HubSS
   runs-on: ubuntu-latest
