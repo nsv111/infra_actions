@@ -63,8 +63,8 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
-        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDC1N1MIhyqBM/tKp+yhS7u+WvxdNnP6SUi2Dll/n3QUDVVdWrNT3dHSEekgwSq3PWivTxZMN0oMXkpMjixEoKEj0BXdYIGITIFYamlClGai10llb9j7Uf675hEZpVzEvG2DXzRoHkQSO/Slm+2Rbh3XMJkJL8/RDyZZeb5gdTNJE429NZpRw877vQFxMk8TiyNM2c7cLYRL5y2qCOfd+YE3DKkXaV4HJpiwwSxpbKg6dO58eHy5PB/z+USHzWjyUOy9EBBrABNaZ6oITbQGcAOYyo+3D3IqaW6Lt19ybi8Aft4/LHzcHylyGyv3ymmVtAIIXpSP8e+9UgR1jsn7CR3sNkNtw4pcBq/VAlDJ7T0I6ePO6LZinTbypfaxPP+3OL1ps3rshNm8XdPKEbGV6BGEOHCS+sH7xO/cPE19CzRHGvTzuX42EIaFbJPBr5QWe23v1gtY1B3WHe3BCIxgLAkEqcPui9MjussdOD+2NWTQZ8hVcd85Bevps3tRhdNyM8= snaumov@snaumov-note  #${{ secrets.SSH_KEY }}
-        passphrase: 1331 #${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
+        key: ${{ secrets.SSH_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
           # Выполняет pull образа с DockerHub
           sudo docker pull <имя-пользователя>/<имя-репозитория>
